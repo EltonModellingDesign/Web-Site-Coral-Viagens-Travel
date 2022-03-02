@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Coral Viagens</title>
+    <link rel='#' href='#' type="#">
+    <style>
+        * {box-sizing: border-box;}
+
+        header{
+            z-index: 5;
+            grid-area: Cabeçalho;
+        }
+        section{
+            grid-area: Conteudo;
+            background-image: url(Conteudo/Seções/Imagem\ Principal1.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+            
+
+        }
+
+
+        body {
+            margin: 0;
+            background-color: #29ABE2;
+            display: grid;
+            grid-template-rows: 205px 1fr 200px;
+            grid-template-areas: 
+            'Cabeçalho'
+            'Conteudo'
+            'Rodape';
+
+
+        }
+        @media (max-width:1250px) {
+            body {
+            margin: 0;
+            background-color: #29ABE2;
+            display: grid;
+            grid-template-rows: 205px 1fr 650px;
+            grid-template-areas: 
+            'Cabeçalho'
+            'Conteudo'
+            'Rodape';}
+
+
+            
+
+        }
+
+
+
+        /*----CABEÇALHO----*/
+
+        .menu1{
+            height: 30px;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;            
+            background-color: white;
+            font-family: 'Gadugi';
+            color: #0071BC;
+        }
+
+        .menu1 img{
+            display:inline;
+            height: 25px;
+        }
+        .menu1 ul {
+            display: flex;
+            align-content: flex-start;
+            text-decoration: none;
+            list-style: none;
+            margin-left: 50px;}
+        ul a{text-decoration: none; margin:0 5px; color: #0071BC;}
+
+        .menu1 span{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 20px;}   
+        .redes { 
+            flex-direction: row-reverse; flex-grow:5; 
+            padding-right: 50px;}
+        .redes a{margin: 0 4px;}
+
+        .perfil{padding-right: 10px;}
+        .perfil a{
+            text-decoration: none;
+            color: #0071BC;
+            margin: 0 2px;
+        }
+
+        .logo{width: 100%;display: flex;justify-content: center;align-items: center;}
+        .logo img{
+            height:120px;            
+            margin-top: 5px;
+        }
+
+        .menu2 ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            background-color: #F7931E;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            border-radius: 15px;
+            list-style: none;
+            font-family: 'Century Gothic';
+            font-style: italic;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        .menu2 a{
+            text-decoration: none;
+            color:white;
+            font-size: 20pt;
+            margin: 0 15px;}
+        .pontos{
+            background-color: white;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin-top: 4px;
+        }
+        .toggle2 svg{display: none;}  
+        .hide-menu{display: none;}      
+        .nav-toggle{display: none;}
+
+        
+
+
+        @media (max-width:1250px){
+            .menu1{display: none;}
+            .menu2{display: none;}
+            .logo{justify-content: space-between; align-items: baseline;margin-top: 30px;}
+            .toggle2 svg{display: inline-block;width: 100px;margin-right: 30px;fill: #F7931E;stroke: white;stroke-width: 5;}
+            .logo img{margin-left: 30px;}
+            .nav-toggle:checked ~ nav{display: flex;justify-content: center;flex-direction:column;flex-wrap: wrap;align-items: center;}
+
+            .hide-menu{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                list-style: none;
+                background-color:#F7931E;
+                border: 10px;
+                color: white;
+                margin: 5px;
+                
+            }
+            .hide-menu1{margin: 30px;}
+            .hide-menu1 a{text-decoration: none;color: white;font-family: 'Century Gothic';font-size: 60px;}
+            .hide-menu1 ul{list-style: none;}
+            
+            .hide-menu2{display: flex;flex-direction: column; margin: 30px; height: 300px;}
+            .hide-menu2 a{text-decoration: none;color: #0071BC;font-family: 'Gadugi';margin: 15px 0;font-size: 55px;}
+            .hide-menu3 {display: inline-block; bottom: 0;height: 500px;padding-top: 350px;}
+
+            .hide-menu3 img{height: 100px;}
+
+        }
+
+        /*-----SEÇÃO----*/
+
+
+        .TextoP {
+            width: 45%;
+            margin-top: 150px;
+            margin-left: 54%;
+            position: fixed;
+            font-family: 'Britannic';
+            font-size: 30pt;
+            padding: 15px 10px 35px 35px;
+            background-color: #ffffff79;
+        }
+        .mask{
+
+            width: 100%;
+            height: 450px;
+            -webkit-mask: url(Conteudo/Seções/Imagem\ de\ fundo\ mask.svg);
+            -webkit-mask-position: center;
+            -webkit-mask-size:100%;
+            -webkit-mask-repeat: no-repeat;
+            mask: url(Conteudo/Seções/Background.svg);
+            mask-position: center;
+            mask-size:100%;
+            mask-repeat: no-repeat;
+            z-index: 1;
+
+        }
+        @media (max-width:1250px){
+            .TextoP{width: 60%;margin-top: 20px;margin-left: 35%;}
+            .mask{height: 360px;}
+        }
+
+
+
+        
+
+
+        .search {
+            height: 60px;
+            margin: 0 35%;
+            background-color: rgba(255, 255, 255, 0.397);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .espaço{
+            background-color: white;
+            background-image: url(Conteudo/Seções/Buscar.svg);
+            background-repeat: no-repeat;
+            background-position: right;
+            height: 50%;
+            width: 75%;
+            border-radius: 5px;
+            border: solid 2px #00FFFF;
+        }
+
+        .main{
+            background-color: #FEE19C;
+            border: solid 2px #0071BC;
+            border-radius: 10px;
+            margin-left: 15%;
+            margin-right: 15%;
+            z-index: 3;
+        }
+        .conteudo{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+        @media (max-width:1666px){
+            .main{margin-left: 3%;margin-right: 3%;}
+            .search{height: 110px;margin: 0 20%;}
+            
+        }
+
+
+
+
+        .menu3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #FDD26B;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 30px;
+            margin-bottom: 60px;
+            width: 300px;
+            font-family: 'Century Gothic';
+            grid-area: Lista;
+        }
+        .menu3 span{
+            text-align: center;
+            font-size: 14pt;
+            color: blueviolet;
+        }
+        .menu3 ul{
+            display: flex;
+            flex-direction: column;
+            font-size: 18pt;
+            color: #0071BC;            
+            list-style: none;
+            text-decoration: none;
+        }
+        .menu3 li:hover{color: white; cursor: pointer;}
+        
+        .menu3 hr{
+            margin-right: 35px; 
+            width: 90%;
+            transform: translate(-10px);         
+        }
+        .toggle3 {display:none}
+
+        .nav-toggle3{display: none;}
+
+
+        @media (max-width:1250px){
+            .toggle3{display: inline-block;
+                font-family: 'Lucida Calligraphy';
+                font-style: italic;
+                font-size: 100px;
+                color: blueviolet;
+                background-color: rgba(255, 255, 255, 0.651);
+                text-decoration: none;
+                margin: 20px;
+                padding: 5px;
+                
+            }
+            .nav-toggle3:checked ~ li{display: block;}
+
+            
+
+            .menu3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 80%;}
+
+            .menu3 li{font-size: 230%;margin:5px 0;}
+            .menu3 li::before{content: ''; color: #0071BC;height:1px;background-color: #0071BC;width: 500px;position: absolute;}
+            .menu3 span{width: 100%;margin-top: 10px;font-size: 170%;}
+            .menu3 hr{width: 100%;display: none;}
+            .hide{display: none;}  
+
+            
+            .firstblood{order: -1;display: inline-block;}
+        }
+        
+
+
+
+
+        .slides{
+            grid-area: Slides;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 790px;
+            height: 450px;
+            margin-top: 30px;
+        }
+
+        .slidecontainer{transform: translate(-0px);display: flex;}
+
+        .maskS{
+            position: relative;
+            height: 350px;
+            width: 600px;
+            overflow: hidden;
+            box-shadow: 0 0 0.8em rgba(0, 0, 0, 0.822);
+        }
+        .textoS{
+            position: absolute;
+            margin-top: 260px;
+            width: 100%;
+            font-family: 'Century Gothic';
+            color: blueviolet;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.801);
+            padding: 10px;
+
+            
+        }
+        .slides img{
+            height: 350px;
+            width: 600px;
+        }         
+        
+        .botãoL, .botãoR{
+            background-color: rgba(255, 255, 255, 0.418);
+            color: #0071BC;
+            border-radius: 50%;
+            border: none;
+            font-size: 35px;
+            padding: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .botãoR:active{color: white;}
+        .botãoL:active{color: white;}
+        .botãoL{
+            transform: rotate(180deg);
+        }
+        .pontosS{
+            width: 100%;
+            display: flex;
+            margin-bottom: 60px;
+            justify-content: center;
+        }
+        .pontoS{
+            padding: 5px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        .pontoC{
+            position: absolute;
+            transform: translate(0px);
+            padding: 5px;
+            background-color: #0071BC;
+            border-radius: 50%;
+            margin: 5px;
+            margin-right: 85px;
+        }
+        @media (max-width:1250px){
+            .slides{flex-wrap: wrap;}
+            .slides a{font-size: 100px;}
+            .textoS{font-size: 30px;}
+            .botãoL, .botãoR{font-size: 60px;}
+
+            
+            
+    
+    
+    }
+        
+        .informativos{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 40px;
+            
+            grid-area: Fotos;
+        }
+        .imagensI{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 300px;
+            margin: 0 50px;
+        }
+  
+        .maskI{
+            height: 160px;
+            width: 230px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.87);
+        }
+
+        .informativos img{
+            
+            width: 320px;
+        }
+        .textoI{
+            height: 60px;
+            width: 230px;
+            font-family: 'Gadugi';
+            color: #0071BC;
+            font-size: 13pt;
+        }
+        .fraseI{
+            position: absolute;
+            height: 160px;
+            width: 230px;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(0, 0, 0, 0);
+        }
+        .fraseI:hover{
+            position: absolute;
+            height: 160px;
+            width: 230px;
+            padding-top:  120px;
+            font-family: 'Century Gothic';
+            text-align: center;
+            font-weight: bold;
+            background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.76));
+            color: #0071BC;
+            font-size: 13pt;
+        }
+        @media (max-width:1250px){
+            .informativos{flex-wrap: nowrap; margin: 40px 10px;}
+            .imagensI{margin: 0 20px;}
+            .textoI{font-size: 150%;}
+            .fraseI{position: absolute;
+            font-family: 'Century Gothic';
+            padding: 5px 0;
+            text-align: center;
+            font-weight: bold;
+            background-color: rgba(255, 146, 4, 0.877);
+            height: 30px;
+            width: 100%;
+            color: white;
+            font-size: 13pt;}
+            .maskI{position:relative;}
+        }
+            
+
+
+        .botão{
+            margin: 30px;
+            background-color: #ed1c233d;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .botão a{          
+            list-style: none;
+            text-decoration: none;
+            border: none;
+            font-family: 'Century Gothic';
+            font-size: 22pt;
+            color: #662D91;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .botão a:active{
+            color:#F7931E;
+        }
+
+        @media (max-width:1250px){
+            .botão{margin-top: 160px;margin-bottom: 80px;}
+            .botão a{font-size: 300%;}
+        }
+        
+
+        /*Rodape*/
+
+        
+        footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: baseline;
+            margin: 0;
+            margin-top: 30px;
+            background-color: #0071BC;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .text1{
+            max-width: 200px;
+            font-size: 9pt;
+            margin-right: 50px;
+            margin-bottom: 10px;
+
+        }
+        .text1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .text2{
+            display: block;
+            max-width: 180px;
+            font-size: 9pt;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+
+        .text4{
+            display: block;
+            max-width: 150px;
+            font-size: 9pt;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+
+        .text5{
+            display: inline-block;
+            font-size: 9pt;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+
+        .text5 img{
+            display: inline-block;
+            height: 80%;
+            width: 80%;
+        }
+
+        @media (max-width:1250px) {
+            .rodape{display: flex;flex-direction: column;flex-wrap: wrap;justify-content: center;align-items: center;}
+            .text1,.text2,.text4,.text5,.text6,.text7{white-space: nowrap;font-size: 150%;margin:5px 0px}
+            .text5 img{height: 70%;width: 100%;}
+            
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="cabeçalho">
+        <nav class="menu1">
+            <ul>
+                <li><a href="#">Colabore</a></li>
+                <li class= "listra">|</li>
+                <li><a href="#">Quem Somos</a></li>
+                <li class= "listra">|</li>
+                <li><a href="#">Contato</a></li>
+                <li class= "listra">|</li>
+                <li><a href="#">Nossos Valores</a></li>
+                <li class= "listra">|</li>
+                <li><a href="#">Anuncie</a></li>
+                <li class= "listra">|</li>
+                <li><a href="#">Noticias</a></li>
+                <li class= "listra">|</li>
+            </ul>
+            <span class="redes">
+                <a href="#"><img src="Conteudo/Cabeçalho/Instagran transparente.png" alt="Instagram"></a>
+                <a href="#"><img src="Conteudo/Cabeçalho/facebook.png" alt="Facebook"></a>
+                Redes Sociais
+            </span>
+            <span class="perfil">
+                <a href="#"><b>Perfil/Cadastrar</b></a>
+                <a href="#"><img src="Conteudo/Cabeçalho/Perfil.svg" alt="Perfil"></a>
+            </span>
+        </nav>
+        <nav class="logo">
+            <a href="#"><img src="Conteudo/Cabeçalho/Logo Coral.svg" alt="Home"></a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <nav class="hide-menu">
+                <span class="hide-menu1"><ul>                           
+                    <li class=><a href="#">Viagens</a></li>
+                    <hr class=>
+                    <li class=><a href="#">Alugueis</a></li>
+                    <hr class=>
+                    <li class=><a href="#">Dicas Uteis</a></li>
+                    <hr class=>
+                    <li class=><a href="#">Blog</a></li></ul>
+                </span>
+                   
+            
+                <span class="hide-menu2">
+                    <a href="#">Colabore</a>
+                    <a href="#">Quem Somos</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Nossos Valores</a>
+                    <a href="#">Anuncie</a>
+                    <a href="#">Noticias</a>
+                </span>
+                <figure class="hide-menu3">
+                    <a href="#"><img src="Conteudo/Cabeçalho/Instagran transparente.png" alt="Instagram"></a>
+                    <a href="#"><img src="Conteudo/Cabeçalho/facebook.png" alt="Facebook"></a>
+                </figure>
+                
+            </nav>                    
+            <label  for="nav-toggle">
+                <span class="toggle2">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="ToggleSVG" x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+                        <g>
+                            <path d="M367.3,37c11.2,0,20.3,9.1,20.3,20.3v385.3c0,11.2-9.1,20.3-20.3,20.3H132.7c-11.2,0-20.3-9.1-20.3-20.3V57.3   c0-11.2,9.1-20.3,20.3-20.3H367.3 M367.3,29H132.7c-15.6,0-28.3,12.7-28.3,28.3v385.3c0,15.6,12.7,28.3,28.3,28.3h234.7   c15.6,0,28.3-12.7,28.3-28.3V57.3C395.7,41.7,383,29,367.3,29L367.3,29z"/>
+                        </g>
+                        <g>
+                            <path d="M160.7,274.3c-13.4,0-24.3-10.9-24.3-24.3c0-13.4,10.9-24.3,24.3-24.3h178.7c13.4,0,24.3,10.9,24.3,24.3   c0,13.4-10.9,24.3-24.3,24.3H160.7z"/>
+                            <path d="M339.3,229.7c11.2,0,20.3,9.1,20.3,20.3c0,11.2-9.1,20.3-20.3,20.3H160.7c-11.2,0-20.3-9.1-20.3-20.3   c0-11.2,9.1-20.3,20.3-20.3H339.3 M339.3,221.7H160.7c-15.6,0-28.3,12.7-28.3,28.3v0c0,15.6,12.7,28.3,28.3,28.3h178.7   c15.6,0,28.3-12.7,28.3-28.3v0C367.7,234.4,355,221.7,339.3,221.7L339.3,221.7z"/>
+                        </g>
+                        <g>
+                            <path d="M160.7,144.3c-13.4,0-24.3-10.9-24.3-24.3c0-13.4,10.9-24.3,24.3-24.3h178.7c13.4,0,24.3,10.9,24.3,24.3   c0,13.4-10.9,24.3-24.3,24.3H160.7z"/>
+                            <path d="M339.3,99.7c11.2,0,20.3,9.1,20.3,20.3c0,11.2-9.1,20.3-20.3,20.3H160.7c-11.2,0-20.3-9.1-20.3-20.3   c0-11.2,9.1-20.3,20.3-20.3H339.3 M339.3,91.7H160.7c-15.6,0-28.3,12.7-28.3,28.3v0c0,15.6,12.7,28.3,28.3,28.3h178.7   c15.6,0,28.3-12.7,28.3-28.3v0C367.7,104.4,355,91.7,339.3,91.7L339.3,91.7z"/>
+                        </g>
+                        <g>
+                            <path d="M160.7,400.3c-13.4,0-24.3-10.9-24.3-24.3c0-13.4,10.9-24.3,24.3-24.3h178.7c13.4,0,24.3,10.9,24.3,24.3   c0,13.4-10.9,24.3-24.3,24.3H160.7z"/>
+                            <path d="M339.3,355.7c11.2,0,20.3,9.1,20.3,20.3c0,11.2-9.1,20.3-20.3,20.3H160.7c-11.2,0-20.3-9.1-20.3-20.3   c0-11.2,9.1-20.3,20.3-20.3H339.3 M339.3,347.7H160.7c-15.6,0-28.3,12.7-28.3,28.3v0c0,15.6,12.7,28.3,28.3,28.3h178.7   c15.6,0,28.3-12.7,28.3-28.3v0C367.7,360.4,355,347.7,339.3,347.7L339.3,347.7z"/>
+                        </g>
+                        </svg>
+                    </span>
+            </label>
+            
+        </nav>
+        <nav class="menu2">
+            <ul>
+                <li><a href="#">Viagens</a></li>
+                <li class= "pontos"></li>
+                <li><a href="#">Alugueis</a></li>
+                <li class= "pontos"></li>
+                <li><a href="#">Dicas Uteis</a></li>
+                <li class= "pontos"></li>
+                <li><a href="#">Cruzeiros</a></li>
+                <li class= "pontos"></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="seção">
+        <div class="mask"> 
+            <span class="TextoP">Vá conhecer as melhores praias e paisagens do mundo com os melhores planos de viagem</span>
+        </div>
+        <div class="search">
+            <input class="espaço" type="text">
+        </div>
+        <div class="main">
+            <div class="conteudo">
+                <div class="menu3">
+                    <span>Escolha seu destino</span>
+                    
+                    <nav wb-lista>
+                        <ul>
+                            <hr> 
+                            <li wb-refresh>America Latina</li>
+                            <hr> 
+                            <input type="checkbox" id="nav-toggle3" class="nav-toggle3">
+                            <li class="hide" wb-america>America do Norte</li>
+                            <hr >
+                            <li class="hide" wb-europa>Europa</li>
+                            <hr>
+                            <li class="hide" wb-asia>Ásia</li>
+                            <hr>
+                            <li class="hide" wb-cruzeiros>Cruzeiros</li>
+                            
+                        </ul>
+                    </nav>                    
+                    <label  for="nav-toggle3"  class="toggle3">+</label>
+                </div>
+                <div class="slides">
+                    <label class="botãoL" wb-buttonL for="botãorepeat">></label>
+                    <figure class="maskS">
+                        <div wb-slider class="slidecontainer">
+                            <div class="containerimg1">
+                                <span class="textoS">Praia de Acapulco</span>
+                                <img src="Conteudo/Seções/Imagem Slide Principal 1.jpg" alt="Bem vindo"> 
+                            </div>
+                            <img src="Conteudo/Seções/Imagens Exemplo/Exemplo 2.jpg" alt="Bem vindo">
+                            <img src="Conteudo/Seções/Imagens Exemplo/Exemplo 3.jpg" alt="Bem vindo">
+                            <img src="Conteudo/Seções/Imagens Exemplo/Exemplo 4.jpg" alt="Bem vindo">
+                            <img src="Conteudo/Seções/Imagens Exemplo/Exemplo 5.jpg" alt="Bem vindo">                     
+                        </div>                        
+                    </figure>
+                    <span class="botãoR" wb-buttonR>></span>
+                    <div class="pontosS" wb-quantidadePontos>
+                        <span class="pontoC" wb-ponto></span>
+                        <span class="pontoS"></span>
+                        <span class="pontoS"></span>
+                        <span class="pontoS"></span>                        
+                        <span class="pontoS"></span>
+                        <span class="pontoS"></span>
+                    </div>
+                </div>
+                <div class="informativos">
+                    <span class="imagensI">
+                        <figure class="maskI" wb-informativos>
+                            <span class="fraseI">Hospedagem já paga</span>
+                            <img src="Conteudo/Seções/Imagem Opção 1.jpg" alt="Ospedagem">
+                        </figure>
+                        <p class="textoI">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
+                    </span>
+                    <span class="imagensI" wb-informativos>
+                        <figure class="maskI">
+                            <span class="fraseI">Paisagens deslumbrantes</span>
+                            <img src="Conteudo/Seções/Imagem Opção 2.jpg" alt="Ospedagem">
+                        </figure>
+                        <p class="textoI">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
+                    </span>
+                    <span class="imagensI" wb-informativos>
+                        <figure class="maskI">
+                            <span class="fraseI">Praias fantasticas</span>
+                            <img src="Conteudo/Seções/Imagem Opção 3.jpeg" alt="Ospedagem">
+                        </figure>
+                        <p class="textoI">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime necessitatibus</p>
+                    </span>
+                </div>
+                <div class="botão">
+                    <a href="#">Planos e orçamento</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+    <footer class="rodape">
+        <div class="text1">
+            <H3>Páginas</H3>
+            <a>
+                <a href="#">. Viagens
+                <br href="#">. Alugueis
+                <br href="#">. Dicas Uteis
+                <br href="#">. Cruzeiros
+                <br href="#">. Blog
+            </a>                
+        </div>
+        <div class="text2">
+            <H3>Informações</H3>
+            <p>
+                Empresa Tom’s Store Solutions<br>
+                CNPJ: 003.4584.154-59<br>
+                Cidade São Paulo/SP<br>
+                Rua Semerino Intra Cep:035-850<br>
+                Bairro: Tatuape<br>
+            </p>
+        </div>
+        <div class="text4">
+            <H3>Support</H3>
+            <p> SAC <br> Tel: 0800 7776-9255<br>Whats:<br>(11) 99336-5689</p>
+            <p>Ouvidoria Tel: <br> 0800-7779-6668</p>
+        </div>
+        <div class="text5">
+            <H3>Selos</H3>
+            <a href="#"><img src="Conteudo/Rodapé/site protegido.png" alt="site-protegido"></a>
+        </div>
+    </footer>
+    <script>
+
+        /*Slide*/
+        const lista = document.querySelector('[wb-lista] ul')
+        const containerImg = document.querySelector('[wb-slider]')
+        const botãoL = document.querySelector('[wb-buttonL]')
+        const botãoR = document.querySelector('[wb-buttonR]')
+        const pontos = document.querySelector('[wb-ponto]')
+        let slide = 0
+        let ponto = 0
+
+        function slideR(){
+
+            while(slide <= 1800) {
+                if(botãoR.onclick){
+                    slide += 600
+                    console.log(slide)
+                    break}
+            }
+
+            while(ponto <= 60) {
+                if(botãoR.onclick){
+                    ponto += 20
+                    console.log(ponto)
+                    break}else if(lista.onclick) {ponto = 0}
+            }
+
+            containerImg.style.transform = `translate(-${slide}px)`
+            pontos.style.transform = `translate(${ponto}px)`
+        }
+
+        function slideL(){
+            while(slide >= 600) {
+                if(botãoL.onclick){
+                    slide -= 600
+                    console.log(slide)
+                    break}
+            }
+
+            while(ponto >= 20) {
+                if(botãoL.onclick){
+                    ponto -= 20
+                    console.log(ponto)
+                    break}
+            }
+            containerImg.style.transform = `translate(-${slide}px)`
+            pontos.style.transform = `translate(${ponto}px)`
+        }
+
+        botãoR.onclick = slideR
+        botãoL.onclick = slideL
+
+        /*Change Travel Buttons*/
+        
+        const americaLoption = document.querySelector('[wb-refresh]')
+        const americaNoption = document.querySelector('[wb-america]')
+        const EuropaOption = document.querySelector('[wb-europa]')
+        const AsiaOption = document.querySelector('[wb-asia]')
+        const CruzeirosOption = document.querySelector('[wb-cruzeiros]')
+        const img = document.querySelector('[wb-slider] img')
+        const textoS = document.querySelector('.textoS')
+        const points = document.querySelectorAll('.pontoS')
+        const informativos = document.querySelectorAll('[wb-informativos] img')
+        const informativosT = document.querySelectorAll('.fraseI')
+        const mais = document.querySelector('.toggle3')
+
+        function Placefirst () {
+            if (mais.innerHTML == '+'){mais.innerHTML = '_';mais.style.padding= '10px';mais.style.paddingBottom= '50px' }
+            else if(mais.innerHTML == '_'){mais.innerHTML = '+';mais.style.padding= '5px';mais.style.paddingBottom= '0px'}
+
+        }
+        
+        mais.onclick = Placefirst
+
+        console.log(lista.childNodes[9])
+
+        function ChangePageLatina (){
+            img.src = 'Conteudo/Seções/Imagem Slide Principal 1.jpg'
+            containerImg.childNodes[3].src = 'Conteudo/Seções/Imagens Exemplo/Exemplo 2.jpg'
+            containerImg.childNodes[5].src = 'Conteudo/Seções/Imagens Exemplo/Exemplo 3.jpg'
+            containerImg.childNodes[7].src = 'Conteudo/Seções/Imagens Exemplo/Exemplo 4.jpg'
+            containerImg.childNodes[9].src = 'Conteudo/Seções/Imagens Exemplo/Exemplo 5.jpg'
+            points[1].style.display = 'inline-block'
+            points[2].style.display = 'inline-block'
+            points[3].style.display = 'inline-block'
+            points[4].style.display = 'inline-block'
+
+            slide= 0
+            ponto= 0
+            function slideR(){
+
+while(slide <= 1800) {
+    if(botãoR.onclick){
+        slide += 600
+        console.log(slide)
+        break}
+}
+
+while(ponto <= 60) {
+    if(botãoR.onclick){
+        ponto += 20
+        console.log(ponto)
+        break}else if(lista.onclick) {ponto = 0}
+}
+
+containerImg.style.transform = `translate(-${slide}px)`
+pontos.style.transform = `translate(${ponto}px)`
+}
+            botãoR.onclick = slideR
+            lista.onclick = slideL  
+            pontos.style.margin = '5px 80px 0 0'         
+
+            informativos[0].src = 'Conteudo/Seções/Imagem Opção 1.jpg'
+            informativos[1].src = 'Conteudo/Seções/Imagem Opção 2.jpg'
+            informativos[2].src = 'Conteudo/Seções/Imagem Opção 3.jpeg'
+
+            informativos.forEach(e => e.style.width = '300px')
+            informativosT[0].textContent = 'Hospedagem já paga'
+            informativosT[1].textContent = 'Paisagens deslumbrantes'
+            informativosT[2].textContent = 'Praias fantasticas'
+            textoS.innerHTML = 'Praia de Acapulco'
+
+
+
+        americaLoption.style.color = '#F7931E'
+        americaNoption.style.color = '#0071BC'
+        EuropaOption.style.color = '#0071BC'
+        AsiaOption.style.color = '#0071BC'
+        CruzeirosOption.style.color = '#0071BC'
+        }
+
+        americaLoption.onclick = ChangePageLatina     
+
+       
+       
+        function ChangePageNorte (){
+        
+
+            img.src = 'Conteudo/Seções/Imagens Exemplo/America do Norte 1.jpg'
+            containerImg.childNodes[3].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte 2.jpg'
+            containerImg.childNodes[5].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte 3.jpg'
+            containerImg.childNodes[7].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte 4.jpg'
+            points[1].style.display = 'inline-block'
+            points[2].style.display = 'inline-block'
+            points[3].style.display = 'inline-block'
+            points[4].style.display = 'none'
+
+            slide= 0
+            ponto= 0
+            
+
+            
+            
+
+            function slideRN(){
+
+            while(slide <= 1200) {
+                if(botãoR.onclick){
+                    slide += 600
+                    console.log(slide)
+                    break}
+            }
+
+            while(ponto <= 40) {
+                if(botãoR.onclick){
+                    ponto += 20
+                    console.log(ponto)
+                    break}
+                    
+            }
+
+            containerImg.style.transform = `translate(-${slide}px)`
+            pontos.style.transform = `translate(${ponto}px)`
+        }
+            lista.onclick = slideL
+            botãoR.onclick = slideRN
+            pontos.style.margin = '5px 60px 0 0'
+
+            
+
+            informativos[0].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte Ex1.jpg'
+            informativos[1].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte Ex2.jpg'
+            informativos[2].src = 'Conteudo/Seções/Imagens Exemplo/America do Norte Ex3.jpg'
+
+            informativos.forEach(e => e.style.width = '285px')
+            informativosT.forEach(e => e.textContent = 'Teste') 
+            textoS.innerHTML = 'Teste'
+
+            americaLoption.style.color = '#0071BC'
+            americaNoption.style.color = '#F7931E'
+            EuropaOption.style.color = '#0071BC'
+            AsiaOption.style.color = '#0071BC'
+            CruzeirosOption.style.color = '#0071BC'
+        
+            console.log(img.src)
+            
+
+        }
+
+        americaNoption.addEventListener('click', ChangePageNorte )
+
+
+function ChangeEuropa (){
+
+
+img.src = 'Conteudo/Seções/Imagens Exemplo/Europa 1.jpg'
+containerImg.childNodes[3].src = 'Conteudo/Seções/Imagens Exemplo/Europa 2.jpg'
+containerImg.childNodes[5].src = 'Conteudo/Seções/Imagens Exemplo/Europa 3.jpg'
+points[1].style.display = 'inline-block'
+points[2].style.display = 'inline-block'
+points[3].style.display = 'none'
+points[4].style.display = 'none'
+
+slide= 0
+ponto= 0
+
+
+function slideE(){
+while(slide <= 600) {
+    if(botãoR.onclick){
+        slide += 600
+        console.log(slide)
+        break}
+}
+
+while(ponto <= 20) {
+    if(botãoR.onclick){
+        ponto += 20
+        console.log(ponto)
+        break}
+}
+containerImg.style.transform = `translate(-${slide}px)`
+pontos.style.transform = `translate(${ponto}px)`
+}
+lista.onclick = slideL
+botãoR.onclick = slideE
+pontos.style.margin = '5px 40px 0 0'
+
+informativos[0].src = 'Conteudo/Seções/Imagens Exemplo/Europa Ex1.jpg'
+informativos[1].src = 'Conteudo/Seções/Imagens Exemplo/Europa Ex2.jpg'
+informativos[2].src = 'Conteudo/Seções/Imagens Exemplo/Europa Ex3.jpg'
+
+informativos.forEach(e => e.style.width = '285px')
+informativosT.forEach(e => e.textContent = 'Teste') 
+textoS.innerHTML = 'Teste'
+
+americaLoption.style.color = '#0071BC'
+americaNoption.style.color = '#0071BC'
+EuropaOption.style.color = '#F7931E'
+AsiaOption.style.color = '#0071BC'
+CruzeirosOption.style.color = '#0071BC'
+
+console.log(img.src)
+
+}
+
+EuropaOption.onclick = ChangeEuropa
+
+
+function ChangeAsia (){
+
+
+img.src = 'Conteudo/Seções/Imagens Exemplo/Asia 1.jpg'
+containerImg.childNodes[3].src = 'Conteudo/Seções/Imagens Exemplo/Asia 2.jpg'
+points[1].style.display = 'inline-block'
+points[2].style.display = 'none'
+points[3].style.display = 'none'
+points[4].style.display = 'none'
+
+slide= 0
+ponto= 0
+
+
+function slideA(){
+while(slide <= 0) {
+    if(botãoR.onclick){
+        slide += 600
+        console.log(slide)
+        break}
+}
+
+while(ponto <= 0) {
+    if(botãoR.onclick){
+        ponto += 20
+        console.log(ponto)
+        break}
+}
+containerImg.style.transform = `translate(-${slide}px)`
+pontos.style.transform = `translate(${ponto}px)`
+}
+lista.onclick = slideL
+botãoR.onclick = slideA
+pontos.style.margin = '5px 20px 0 0'
+
+informativos[0].src = 'Conteudo/Seções/Imagens Exemplo/Asia Ex1.jpg'
+informativos[1].src = 'Conteudo/Seções/Imagens Exemplo/Asia Ex2.jpg'
+informativos[2].src = 'Conteudo/Seções/Imagens Exemplo/Asia Ex3.jpg'
+
+informativos.forEach(e => e.style.width = '285px')
+informativosT.forEach(e => e.textContent = 'Teste') 
+textoS.innerHTML = 'Teste'
+
+americaLoption.style.color = '#0071BC'
+americaNoption.style.color = '#0071BC'
+EuropaOption.style.color = '#0071BC'
+AsiaOption.style.color = '#F7931E'
+CruzeirosOption.style.color = '#0071BC'
+
+console.log(img.src)
+
+}
+
+AsiaOption.onclick = ChangeAsia
+
+function ChangeCruzeiros (){
+
+
+img.src = 'Conteudo/Seções/Imagens Exemplo/Cruzeiro.jpg'
+points[1].style.display = 'none'
+points[2].style.display = 'none'
+points[3].style.display = 'none'
+points[4].style.display = 'none'
+
+slide= 0
+ponto= 0
+
+
+function slideC(){
+while(slide <= 0) {
+    if(botãoR.onclick){
+        slide += 0
+        console.log(slide)
+        break}
+}
+
+while(ponto <= 0) {
+    if(botãoR.onclick){
+        ponto += 0
+        console.log(ponto)
+        break}
+}
+containerImg.style.transform = `translate(-${slide}px)`
+pontos.style.transform = `translate(${ponto}px)`
+}
+lista.onclick = slideL
+botãoR.onclick = slideC
+pontos.style.margin = '5px 0 0 0'
+
+informativos[0].src = 'Conteudo/Seções/Imagens Exemplo/Cruzeiro Ex1.jpg'
+informativos[1].src = 'Conteudo/Seções/Imagens Exemplo/Cruzeiro Ex1.jpg'
+informativos[2].src = 'Conteudo/Seções/Imagens Exemplo/Cruzeiro Ex1.jpg'
+
+informativos.forEach(e => e.style.width = '285px')
+informativosT.forEach(e => e.textContent = 'Teste') 
+textoS.innerHTML = 'Teste'
+
+americaLoption.style.color = '#0071BC'
+americaNoption.style.color = '#0071BC'
+EuropaOption.style.color = '#0071BC'
+AsiaOption.style.color = '#0071BC'
+CruzeirosOption.style.color = '#F7931E'
+
+console.log(img.src)
+
+}
+
+CruzeirosOption.onclick = ChangeCruzeiros
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
